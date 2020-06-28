@@ -5,7 +5,7 @@ from bokeh.plotting import figure
 from bokeh.embed import components
 import simplejson as json
 
-import pandas_datareader as pdr
+#import pandas_datareader as pdr
 
 app = Flask(__name__)
 
