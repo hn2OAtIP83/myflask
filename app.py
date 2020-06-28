@@ -5,6 +5,8 @@ from bokeh.plotting import figure
 from bokeh.embed import components
 import simplejson as json
 
+import pandas_datareader as pdr
+
 app = Flask(__name__)
 
 app.vars = {}
@@ -27,6 +29,8 @@ def graph():
   data = session.get(api_url)
   jsondata = data.json()
   df = pd.DataFrame(jsondata["data"], columns=jsondata['column_names'])
+
+  #df = pdr.get_data_yahoo('GOOG')
 
   df['Date'] = pd.to_datetime(df['Date'])
 
