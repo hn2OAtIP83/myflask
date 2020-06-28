@@ -30,8 +30,7 @@ def graph():
 
   df['Date'] = pd.to_datetime(df['Date'])
 
-  x = df['Date'].values
-  y = df['Open'].values
+  x, y = df['Date'].values, df['Open'].values
 
   plot = figure(title='Data from Quandle WIKI set',
               x_axis_label='date',
