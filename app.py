@@ -28,7 +28,13 @@ def graph():
   session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
   data = session.get(api_url)
   jsondata = data.json()
-  df = pd.DataFrame(jsondata['data'], columns=jsondata['column_names'])
+  ### test
+  columnNames = jsondata['column_names']
+  df = pd.DataFrame.from_dict(jsondata['data'])
+  df.set_axis(columnNames, axis=1, inplace=True)
+
+  ### test
+  #df = pd.DataFrame(jsondata['data'], columns=jsondata['column_names'])
 
   #df = pdr.get_data_yahoo('GOOG')
 
