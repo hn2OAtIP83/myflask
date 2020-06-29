@@ -3,7 +3,8 @@ import pandas as pd
 import requests
 from bokeh.plotting import figure
 from bokeh.embed import components
-import simplejson as json
+#import simplejson as json
+import json
 
 #import pandas_datareader as pdr
 
