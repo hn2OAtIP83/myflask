@@ -6,7 +6,7 @@ from bokeh.embed import components
 import quandl
 import bokeh
 
-quandl.ApiConfig.api_key = "fK6eeHbvyzUgszZDrHhj"
+
 
 #import pandas_datareader as pdr
 
@@ -25,17 +25,20 @@ def about():
 @app.route('/graph', methods=['POST'])
 def graph():
   
+  quandl.ApiConfig.api_key = "fK6eeHbvyzUgszZDrHhj"
+
   symbol = "GOOG"
   
   data = quandl.get_table('WIKI/PRICES', qopts = { 'columns': ['ticker', 'date', 'open', 'close', 'low', 'high'] }, ticker = [symbol], date = { 'gte': '2019-01-01', 'lte': '2019-12-31' })
+  print(data)
   df = pd.DataFrame(data)
-  print(df.head())
+  #print(df.head())
 
   df['date'] = pd.to_datetime(df['date'])
 
   x, y = df['date'].values, df['close'].values
-  print(x)
-  print(y)
+  #print(x)
+  #print(y)
 
   plot = figure(title='%s Historical Close Value Via Quandl' % symbol,
               x_axis_label='date',
