@@ -3,9 +3,8 @@ import pandas as pd
 import requests
 from bokeh.plotting import figure
 from bokeh.embed import components
-#import simplejson as json
-import json
 import quandl
+import bokeh
 
 quandl.ApiConfig.api_key = "fK6eeHbvyzUgszZDrHhj"
 
