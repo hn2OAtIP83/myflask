@@ -22,8 +22,8 @@ def about():
 @app.route('/graph', methods=['POST'])
 def graph():
 
-  stock = "GOOG"
-  api_url = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.json' % stock
+  symbol = "GOOG"
+  api_url = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.json' % symbol
   session = requests.Session()
   session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
   data = session.get(api_url)
@@ -43,7 +43,7 @@ def graph():
 
   x, y = df['Date'].values, df['Open'].values
 
-  plot = figure(title='Data from Quandl WIKI set',
+  plot = figure(title='%s from Quandl WIKI set' % symbol,
               x_axis_label='date',
               x_axis_type='datetime')
 
