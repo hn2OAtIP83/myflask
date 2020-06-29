@@ -31,7 +31,7 @@ def graph():
   print(jsondata)
   ### test
   #columnNames = jsondata['column_names']
-  df = pd.DataFrame.from_dict(jsondata['data])
+  df = pd.DataFrame.from_dict(jsondata['data'])
   df.set_axis(columnNames, axis=1, inplace=True)
 
   ### test
