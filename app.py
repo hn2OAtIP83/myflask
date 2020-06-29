@@ -25,10 +25,12 @@ def graph():
 
   symbol = "GOOG"
   api_url = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.json' % symbol
+  print(api_url)
   session = requests.Session()
   session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
   data = session.get(api_url)
-  jsondata = data.json()
+  print(data)
+  #jsondata = data.json()
   print(jsondata)
   ### test
   columnNames = jsondata['column_names']
