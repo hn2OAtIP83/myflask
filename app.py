@@ -36,6 +36,8 @@ def graph():
 
   x, y = df['date'].values, df['close'].values
 
+  print(x)
+
   plot = figure(title='%s Historical Close Value Via Quandl' % symbol,
               x_axis_label='date',
               x_axis_type='datetime')
