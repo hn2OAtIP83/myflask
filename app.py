@@ -45,8 +45,6 @@ def graph():
 
   script, div = components(plot)
 
-  print(script)
-
   return render_template('graph.html', script=script, div=div)
 
 if __name__ == '__main__':
