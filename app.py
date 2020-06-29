@@ -28,13 +28,15 @@ def graph():
   
   symbol = "GOOG"
   
-  data = quandl.get_table('WIKI/PRICES', qopts = { 'columns': ['ticker', 'date', 'open', 'close', 'low', 'high'] }, ticker = [symbol], date = { 'gte': '2016-01-01', 'lte': '2016-12-31' })
+  data = quandl.get_table('WIKI/PRICES', qopts = { 'columns': ['ticker', 'date', 'open', 'close', 'low', 'high'] }, ticker = [symbol], date = { 'gte': '2019-01-01', 'lte': '2019-12-31' })
   df = pd.DataFrame(data)
   print(df.head())
 
   df['date'] = pd.to_datetime(df['date'])
 
   x, y = df['date'].values, df['close'].values
+  print(x)
+  print(y)
 
   plot = figure(title='%s Historical Close Value Via Quandl' % symbol,
               x_axis_label='date',
