@@ -29,7 +29,7 @@ def graph():
   session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
   data = session.get(api_url)
   jsondata = data.json()
-  #print(jsondata)
+  print(jsondata)
   ### test
   columnNames = jsondata['column_names']
   df = pd.DataFrame.from_dict(jsondata['data'])
