@@ -28,9 +28,9 @@ def graph():
   session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
   data = session.get(api_url)
   jsondata = data.json()
-  print(jsondata)
+  #print(jsondata)
   ### test
-  #columnNames = jsondata['column_names']
+  columnNames = jsondata['column_names']
   df = pd.DataFrame.from_dict(jsondata['data'])
   df.set_axis(columnNames, axis=1, inplace=True)
 
@@ -43,7 +43,7 @@ def graph():
 
   x, y = df['Date'].values, df['Open'].values
 
-  plot = figure(title='Data from Quandle WIKI set',
+  plot = figure(title='Data from Quandl WIKI set',
               x_axis_label='date',
               x_axis_type='datetime')
 
