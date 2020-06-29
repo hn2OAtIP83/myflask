@@ -36,8 +36,6 @@ def graph():
 
   x, y = df['date'].values, df['close'].values
 
-  print(x)
-
   plot = figure(title='%s Historical Close Value Via Quandl' % symbol,
               x_axis_label='date',
               x_axis_type='datetime')
@@ -45,6 +43,8 @@ def graph():
   plot.line(x, y, line_width=2, legend_label="Close")
 
   script, div = components(plot)
+
+  print(script)
 
   return render_template('graph.html', script=script, div=div)
 
