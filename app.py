@@ -29,7 +29,9 @@ def graph():
 
   symbol = "GOOG"
   
-  data = quandl.get_table('WIKI/PRICES', qopts = { 'columns': ['ticker', 'date', 'open', 'close', 'low', 'high'] }, ticker = [symbol], date = { 'gte': '2019-01-01', 'lte': '2019-12-31' })
+  data = quandl.get_table('WIKI/PRICES', qopts = { 'columns': ['ticker', 'date',
+   'open', 'close', 'low', 'high'] }, ticker = [symbol],
+    date = { 'gte': '2019-01-01', 'lte': '2019-12-31' })
   print(data)
   df = pd.DataFrame(data)
   #print(df.head())

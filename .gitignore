@@ -1,5 +1,10 @@
+.gitignore
 __pycache__/
 .idea/
 .pytest_cache/
 .vscode/
 *.code-workspace
+Lib/
+Scripts/
+Include/
+pyvenv.cfg
