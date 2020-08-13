@@ -1,3 +1,6 @@
+wheel
+piptools
+python-language-server[all]
 pandas==1.0.5
 bokeh==2.1.0
 dill
