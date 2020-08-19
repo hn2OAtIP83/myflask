@@ -26,6 +26,10 @@ def about():
 
 @app.route('/graph', methods=['POST'])
 def graph():
+<<<<<<< HEAD
+=======
+
+>>>>>>> 719ecf367eca3561561da4828a7e8dfb887bc45e
     quandl.ApiConfig.api_key = "fK6eeHbvyzUgszZDrHhj"
     symbol = "GOOG"
     columns = ['ticker', 'date', 'open', 'close', 'low', 'high']
