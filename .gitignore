@@ -1,3 +1,9 @@
-.gitignore
+.*
+Include
+Lib
+Scripts
+*pycache*
+*workspace
+*cfg
 gitui
 venv
