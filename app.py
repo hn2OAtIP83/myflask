@@ -43,15 +43,15 @@ def graph():
     # print(x)
     # print(y)
 
-  plot = figure(title='%s Historical Close Value Via Quandl' % symbol,
+    plot = figure(title='%s Historical Close Value Via Quandl' % symbol,
               x_axis_label='date',
               x_axis_type='datetime')
 
-  plot.line(x, y, line_width=2, legend_label="Close")
+    plot.line(x, y, line_width=2, legend_label="Close")
 
-  script, div = components(plot)
+    script, div = components(plot)
 
-  return render_template('graph.html', script=script, div=div)
+    return render_template('graph.html', script=script, div=div)
 
 if __name__ == '__main__':
   app.run(port=33507)
