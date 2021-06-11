@@ -54,7 +54,7 @@ toml==0.10.1
 tornado==6.0.4
 typing-extensions==3.7.4.2
 ujson==1.35
-urllib3==1.24.3
+urllib3==1.26.5
 Werkzeug==1.0.1
 wrapt==1.12.1
 yapf==0.30.0
